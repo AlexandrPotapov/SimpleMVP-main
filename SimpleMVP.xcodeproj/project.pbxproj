@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1124C28C2CD0F43A00CD6E84 /* ModuleGammaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C28B2CD0F43A00CD6E84 /* ModuleGammaPresenter.swift */; };
+		1124C28F2CD0F66C00CD6E84 /* ModuleGammaFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C28E2CD0F66C00CD6E84 /* ModuleGammaFactory.swift */; };
+		1124C2912CD0F68600CD6E84 /* ModuleGammaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C2902CD0F68600CD6E84 /* ModuleGammaRouter.swift */; };
+		1124C2932CD0F69400CD6E84 /* ModuleGammaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C2922CD0F69400CD6E84 /* ModuleGammaView.swift */; };
+		1124C2952CD0F6AB00CD6E84 /* ModuleGammaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124C2942CD0F6AB00CD6E84 /* ModuleGammaViewController.swift */; };
 		8E7D7EE42B81F2A9004D13D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D7EE32B81F2A9004D13D3 /* AppDelegate.swift */; };
 		8E7D7EED2B81F2A9004D13D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E7D7EEC2B81F2A9004D13D3 /* Assets.xcassets */; };
 		8E7D7EF02B81F2A9004D13D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E7D7EEE2B81F2A9004D13D3 /* LaunchScreen.storyboard */; };
@@ -26,6 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1124C28B2CD0F43A00CD6E84 /* ModuleGammaPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleGammaPresenter.swift; sourceTree = "<group>"; };
+		1124C28E2CD0F66C00CD6E84 /* ModuleGammaFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleGammaFactory.swift; sourceTree = "<group>"; };
+		1124C2902CD0F68600CD6E84 /* ModuleGammaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleGammaRouter.swift; sourceTree = "<group>"; };
+		1124C2922CD0F69400CD6E84 /* ModuleGammaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleGammaView.swift; sourceTree = "<group>"; };
+		1124C2942CD0F6AB00CD6E84 /* ModuleGammaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleGammaViewController.swift; sourceTree = "<group>"; };
 		8E7D7EE02B81F2A9004D13D3 /* SimpleMVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7D7EE32B81F2A9004D13D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E7D7EEC2B81F2A9004D13D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +67,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1124C28D2CD0F44000CD6E84 /* ModuleGamma */ = {
+			isa = PBXGroup;
+			children = (
+				1124C28B2CD0F43A00CD6E84 /* ModuleGammaPresenter.swift */,
+				1124C28E2CD0F66C00CD6E84 /* ModuleGammaFactory.swift */,
+				1124C2902CD0F68600CD6E84 /* ModuleGammaRouter.swift */,
+				1124C2922CD0F69400CD6E84 /* ModuleGammaView.swift */,
+				1124C2942CD0F6AB00CD6E84 /* ModuleGammaViewController.swift */,
+			);
+			path = ModuleGamma;
+			sourceTree = "<group>";
+		};
 		8E7D7ED72B81F2A9004D13D3 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +102,7 @@
 				8E7D7EF72B81F37B004D13D3 /* Services */,
 				8E7D7EFC2B81F3FC004D13D3 /* ModuleAlpha */,
 				8E7D7EFD2B81F40B004D13D3 /* ModuleBeta */,
+				1124C28D2CD0F44000CD6E84 /* ModuleGamma */,
 				8E7D7EE32B81F2A9004D13D3 /* AppDelegate.swift */,
 				8E7D7EEC2B81F2A9004D13D3 /* Assets.xcassets */,
 				8E7D7EEE2B81F2A9004D13D3 /* LaunchScreen.storyboard */,
@@ -201,14 +224,19 @@
 			files = (
 				8E7D7F122B822778004D13D3 /* ModuleAlphaPresenter.swift in Sources */,
 				8E7D7F042B81F467004D13D3 /* ModuleBetaView.swift in Sources */,
+				1124C2932CD0F69400CD6E84 /* ModuleGammaView.swift in Sources */,
 				8E7D7F052B81F467004D13D3 /* ModuleBetaViewController.swift in Sources */,
+				1124C2912CD0F68600CD6E84 /* ModuleGammaRouter.swift in Sources */,
 				8E7D7F0D2B8226FE004D13D3 /* ModuleBetaFactory.swift in Sources */,
+				1124C28F2CD0F66C00CD6E84 /* ModuleGammaFactory.swift in Sources */,
 				8E7D7F002B81F438004D13D3 /* ModuleAlphaViewController.swift in Sources */,
 				8E7D7EE42B81F2A9004D13D3 /* AppDelegate.swift in Sources */,
 				8E7D7F0B2B822631004D13D3 /* ModuleBetaRouter.swift in Sources */,
 				8E7D7F012B81F438004D13D3 /* ModuleAlphaView.swift in Sources */,
 				8E7D7F072B81F47A004D13D3 /* ModuleAlphaFactory.swift in Sources */,
 				8E7D7EFB2B81F37B004D13D3 /* DataBaseService.swift in Sources */,
+				1124C2952CD0F6AB00CD6E84 /* ModuleGammaViewController.swift in Sources */,
+				1124C28C2CD0F43A00CD6E84 /* ModuleGammaPresenter.swift in Sources */,
 				8E7D7F102B822718004D13D3 /* AlertModuleFactory.swift in Sources */,
 				8E7D7F092B82260F004D13D3 /* ModuleAlphaRouter.swift in Sources */,
 				8E7D7F142B8227CD004D13D3 /* ModuleBetaPresenter.swift in Sources */,

@@ -11,6 +11,7 @@ protocol ModuleBetaPresenterProtocol {
     
     func viewDidLoad()
     func requestSave()
+    func openGamma()
 }
 
 final class ModuleBetaPresenter: ModuleBetaPresenterProtocol {
@@ -53,10 +54,15 @@ final class ModuleBetaPresenter: ModuleBetaPresenterProtocol {
             
             switch result {
             case .success:
-                router.showSuccess()
+                router.showRequestConfirm()
             case .failure:
                 router.showError()
             }
         }
+    }
+    
+    func openGamma() {
+        // открыть модуль Beta и передать туда параметры
+        router.openModuleGamma(with: someParam, value: "circle.fill")
     }
 }

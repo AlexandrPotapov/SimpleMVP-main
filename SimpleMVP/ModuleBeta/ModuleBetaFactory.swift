@@ -19,8 +19,10 @@ final class ModuleBetaFactory {
         let dataBaseService = DataBaseService()
         
         let router = ModuleBetaRouter(
-            alertFactory: AlertModuleFactory()
+            alertFactory: AlertModuleFactory(),
+            gammaFactory: ModuleGammaFactory()
         )
+        
         
         let presenter = ModuleBetaPresenter(
             someParam: context.someParam,

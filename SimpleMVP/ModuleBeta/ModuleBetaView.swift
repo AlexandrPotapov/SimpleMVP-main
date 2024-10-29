@@ -26,6 +26,13 @@ final class ModuleBetaView: UIView {
         return button
     }()
     
+    private lazy var button2: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("GoGo", for: .normal)
+        button.addTarget(self, action: #selector(onTapped2), for: .touchUpInside)
+        return button
+    }()
+    
     private let presenter: ModuleBetaPresenterProtocol
 
     init(presenter: ModuleBetaPresenterProtocol) {
@@ -71,11 +78,13 @@ private extension ModuleBetaView {
     func setupSubviews() {
         addSubview(label)
         addSubview(button)
+        addSubview(button2)
     }
 
     func setupConstraints() {
         label.translatesAutoresizingMaskIntoConstraints = false
         button.translatesAutoresizingMaskIntoConstraints = false
+        button2.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             label.centerYAnchor.constraint(equalTo: self.centerYAnchor),
@@ -84,7 +93,12 @@ private extension ModuleBetaView {
             button.heightAnchor.constraint(equalToConstant: 45.0),
             button.widthAnchor.constraint(equalToConstant: 150.0),
             button.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            button.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
+            button.bottomAnchor.constraint(equalTo: button2.topAnchor, constant: -60.0),
+            
+            button2.heightAnchor.constraint(equalToConstant: 45.0),
+            button2.widthAnchor.constraint(equalToConstant: 150.0),
+            button2.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            button2.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
         ])
     }
     
@@ -92,6 +106,11 @@ private extension ModuleBetaView {
     @objc
     func onTapped() {
         presenter.requestSave()
-    }    
+    }
+    
+    @objc
+    func onTapped2() {
+        presenter.openGamma()
+    }
 }
 

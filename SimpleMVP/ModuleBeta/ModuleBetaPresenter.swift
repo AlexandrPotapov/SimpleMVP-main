@@ -10,7 +10,7 @@ protocol ModuleBetaPresenterProtocol {
     var title: String { get }
     
     func viewDidLoad()
-    func requestSave()
+    func showConformation()
     func openGamma()
 }
 
@@ -49,18 +49,21 @@ final class ModuleBetaPresenter: ModuleBetaPresenterProtocol {
     }
     
     
-    func requestSave() {
-        router.showConformation { result in
-            if result == .confirmed {
-                self.dataBaseServiceSave()
-            } else {
-                print("cancle")
+    func showConformation() {
+        router.showConformation { [weak self] result in
+            guard let self else { return }
+
+            switch result {
+            case .confirmed:
+                self.requestSave()
+            case .canceled:
+                print("canclel")
             }
         }
     }
     
     
-    func dataBaseServiceSave() {
+    func requestSave() {
         dataBaseService.storeData(value: someParam) { [weak self] (result: Result<Void, Error>) in
             guard let self else { return }
             

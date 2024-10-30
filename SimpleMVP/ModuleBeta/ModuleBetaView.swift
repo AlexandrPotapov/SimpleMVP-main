@@ -105,7 +105,7 @@ private extension ModuleBetaView {
     
     @objc
     func onTapped() {
-        presenter.requestSave()
+        presenter.showConformation()
     }
     
     @objc

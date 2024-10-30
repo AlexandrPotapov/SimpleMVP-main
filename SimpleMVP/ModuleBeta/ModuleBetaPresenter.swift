@@ -48,18 +48,32 @@ final class ModuleBetaPresenter: ModuleBetaPresenterProtocol {
         view?.update(model: model)
     }
     
+    
     func requestSave() {
+        router.showConformation { result in
+            if result == .confirmed {
+                self.dataBaseServiceSave()
+            } else {
+                print("cancle")
+            }
+        }
+    }
+    
+    
+    func dataBaseServiceSave() {
         dataBaseService.storeData(value: someParam) { [weak self] (result: Result<Void, Error>) in
             guard let self else { return }
             
             switch result {
             case .success:
-                router.showRequestConfirm()
+                router.showSuccess()
             case .failure:
                 router.showError()
             }
         }
     }
+    
+    
     
     func openGamma() {
         // открыть модуль Beta и передать туда параметры

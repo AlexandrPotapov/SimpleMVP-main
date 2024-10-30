@@ -10,7 +10,7 @@ protocol ModuleBetaRouterProtocol {
     func showSuccess()
     func showError()
     func openModuleGamma(with param: String, value: String)
-    func showRequestConfirm()
+    func showConformation(completion: @escaping (ConfirmationResult) -> Void)
 }
 
 final class ModuleBetaRouter: ModuleBetaRouterProtocol {
@@ -42,18 +42,17 @@ final class ModuleBetaRouter: ModuleBetaRouterProtocol {
         root?.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func showRequestConfirm() {
-        let viewController = alertFactory.make(
+    func showConformation(completion: @escaping (ConfirmationResult) -> Void) {
+        let viewController = AlertModuleFactory().make(
             title: "SimpleMVP",
             message: "Save changes?",
-            withCancellAction: true
-        ) {
-            self.showSuccess()
-        }
-        
+            okActionTitle: "Ok",
+            cancelActionTitle: "Cancel",
+            completion: completion
+        )
         root?.present(viewController, animated: true)
     }
-    
+        
     func showSuccess() {
         let viewController = alertFactory.make(
             title: "Module Beta",
